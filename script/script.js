@@ -1,88 +1,42 @@
-var cards = {
-        "blue": 
-        {
-            1 : {
-            "value": 1,
-            "facingDown": true,
-        },
-            2: {
-            "value": 1,
-            "facingDown": true,
-        }, 
-            3: {
-                "value" : 2,
-                "facingDown" : true,
-        },
-            4: {
-                "value" : 2,
-                "facingDown" : true,
-        }
-        }, 
-        "red": 
-        {
-            1: {
-                "value": 1,
-                "facingDown": true,
-            }, 
-            2: {
-                "value": 1,
-                "facingDown": true,
-            }
-        },
-};
 $( document ).ready(function() {
     $('#colorChoices').multiselect({
-        includeSelectAllOption: true,
     });
-
-
 });
 
 function whatSelection () {
-    var selections = document.getElementById("myForm").getElementsByClassName("active");
-    var colorChoices = [];
-    for (var i = 0; i < selections.length; i++) {
-        var stuff = selections[i].getElementsByTagName('input')[i];
-        colorChoices.push();
-        console.log(stuff);
+    var typesOfCards = [];
+    var inputValues = $('.active input').map(function() {
+        return $(this).val();
+    }).toArray();
+    
+    var totalCards = $('.pairsAmount option:selected').val() ;
+    var i = 0;
+    var n = 0;
+    var f = 0;
+    var k = 1;
+
+    typesOfCards.push({"typeOfCard" : inputValues[n], "amount": n, "amountPushed": k});
+   
+    for  (;i !== ((totalCards * inputValues.length) -1);i++) {
+         if (typesOfCards[i].amountPushed == totalCards  ) {
+            n++;
+            f++;
+            k=0;
+        } 
+            k++;
+            typesOfCards.push({"typeOfCard" : inputValues[n], "amount": f, "amountPushed": k});    
     }
 
-    console.log(selections);
-
-}
-
-
-
-function createMiniArrays (amount, typesOfCards) {
-    var i = 1, a = 1;
-    if (amount < 2 || amount == undefined) {
-        return "Is not possible to create such a thing, what are you even thinking dummy?";
-    } else {
-        miniArray2 = [], miniArray1 = [];
-        for (i, a; i < amount, a <= amount; i++, a++) {
-            miniArray1.push(i);
-            miniArray2.push(a);
-        }
-        shuffle(miniArray1);
-        shuffle(miniArray2);
-        console.log(miniArray1, miniArray2);
+    console.log(inputValues);
+        console.log(i);
+        console.log(n);
+        console.log(f);
+        console.log(k);
+        console.log(totalCards);
+        return typesOfCards;
     }
-    return "Success!";
-}
 
-function createFullArray () {
-    if (miniArray1 && miniArray2 !== undefined ) {
-        if (miniArray1[miniArray1.length-1] == miniArray2[0]) { 
-            shuffle(miniArray1);
-            return createFullArray();
-        } else {
-            fullArray = miniArray1.concat(miniArray2); 
-            return fullArray;
-        }
-    } else {
-        console.log("You can't create nothing from nothing");
-    }
-}
+
 
 function shuffle(array) {
     var x, z, randomNum;

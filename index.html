@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
- 
 
-    <!-- This stuff is needed for the Dropdown Multiselect plugin-->
+    <!-- START -- This stuff is needed for the Dropdown Multiselect plugin-->
     <!-- Include Twitter Bootstrap and jQuery: -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css"
         rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -18,21 +19,22 @@
         rel="stylesheet" type="text/css" />
     <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
         type="text/javascript"></script>
-        <script src="script/script.js"></script>
-    <!-- This stuff is needed for the Dropdown Multiselect plugin-->
+    <!-- END -- This stuff is needed for the Dropdown Multiselect plugin-->
+
+    <script src="script/script.js"></script>
 </head>
 <body>
     <div>
         <form id="myForm" action=""> 
-            <select name="pairsAmount" class="multiselect" id="">
+            <select name="" class="pairsAmount" id="">
                 <option value="4">4</option>
                 <option value="6">6</option>
                 <option value="8">8</option>
                 <option value="10">10</option>
             </select>
             <select name="typesOfCards" multiple id="colorChoices">
-                <option value="Blue">Blue</option>
-                <option value="Red">Red</option>
+                <option value="Blue" selected>Blue</option>
+                <option value="Red" selected>Red</option>
                 <option value="Green">Green</option>
                 <option value="Yellow">Yellow</option>
             </select>
