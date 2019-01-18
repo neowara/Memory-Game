@@ -4,7 +4,7 @@ Mini-project for JavaScript 1 course
 ### To-do list:
 - [X] Create a mockup
 - [X] Create file structure and folders
-- [ ] Create a function that creates all the cards and pushes them to an array of Objects that contains all of the cards
+- [X] Create a function that creates all the cards and pushes them to an array of Objects that contains all of the cards
 - [ ] Shuffle the cards and present them to the player
 - [ ] Create a grid that present the cards in 3x3 or 4x4 depending on screen size
 - [ ] Create a function that knows when the user has clicked a card 
