@@ -1,14 +1,23 @@
+
 // This is needed to run the dropdown selection plugin, it will run when the page is loaded
 $( document ).ready(function() {
     $('#colorChoices').multiselect({
     });
+
+    var form = document.querySelector("form");
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        whatSelection ();
+      });
 });
+
+//we will be pushing all of the values as objects into this array 
+var deck = [];
+
 
 //This function will take what the user has selected (cards per type and types of cards) 
 //and will make it into an array of Objects with different keys and values.
 function whatSelection () {
-    //we will be pushing all of the values as objects into this array 
-    var deck = [];
 
     //this variables keeps track of things like position and repetitions 
     var i = 0;
@@ -41,10 +50,24 @@ function whatSelection () {
             timesPushed++;
             deck.push({"typeOfCard" : selectedCardsType[f], "value": f, "timesPushed": timesPushed});    
     }
-        //when called this function will return the variable deck that contains an array full of cards as Objects
-        return deck;
-    }
 
+    shuffle(deck);
+
+    deck.forEach(function(card, index){
+
+        let cards = document.createElement("div");
+        cards.classList.add("card");
+        cards.id = index;
+        content.appendChild(cards);
+        var cardContent = `
+            <div class = ${card.value}>
+            <h4> ${card.typeOfCard} </h4>
+            </div>
+        `;
+        document.getElementById(cards.id).innerHTML = cardContent;
+    
+    });
+    }
 
 //this a simple function that suffles elements in an array so they are all in random positions
 function shuffle(array) {
@@ -57,3 +80,5 @@ function shuffle(array) {
     }
     return array;
 }
+
+
