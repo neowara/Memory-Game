@@ -1,4 +1,3 @@
-
 // This is needed to run the dropdown selection plugin, it will run when the page is loaded
 $( document ).ready(function() {
     $('#colorChoices').multiselect({
@@ -29,13 +28,16 @@ function whatSelection () {
         return $(this).val();
     }).toArray();
 
+
     //here we take the numbers of cards PER type and save it into a variable
     var cardsPerType = $('.pairsAmount option:selected').val() ;
+
 
     //this will push our first card into our array as an Object with different key and values
     //is important that is pushed first so that the IF inside the FOR LOOP can have an object to evaluate 
     deck.push({"typeOfCard" : selectedCardsType[f], "value": f, "timesPushed": timesPushed});
    
+
     //this will loop the IF statement inside until the amount of cards in the deck are equal to the 
     //cards per card type (so if they selected 4 cards and 2 categories of cards, Blue and Red, there should 4 cards of each category making it 8 in total)
     for  (;i !== ((cardsPerType * selectedCardsType.length) -1);i++) {
@@ -43,6 +45,7 @@ function whatSelection () {
         //The if statement checks if the current Object has been pushed enough times
         //If the amount of times a card has been pushed is equal to the amount of cards per type then 
         //set the counter for times pushed back to 0 and increase our f counter by 1
+
          if (deck[i].timesPushed == cardsPerType  ) {
             f++;
             timesPushed=0;
@@ -60,7 +63,7 @@ function whatSelection () {
         cards.id = index;
         content.appendChild(cards);
         var cardContent = `
-            <div class = ${card.value}>
+            <div class = "${card.value} ${card.typeOfCard}">
             <h4> ${card.typeOfCard} </h4>
             </div>
         `;
@@ -68,6 +71,7 @@ function whatSelection () {
     
     });
     }
+
 
 //this a simple function that suffles elements in an array so they are all in random positions
 function shuffle(array) {
