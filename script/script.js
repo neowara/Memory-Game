@@ -6,17 +6,17 @@ $( document ).ready(function() {
     var form = document.querySelector("form");
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        whatSelection ();
+        whatSelection();
+        location.href = "./game.html";
       });
 });
-
-//we will be pushing all of the values as objects into this array 
-var deck = [];
-
 
 //This function will take what the user has selected (cards per type and types of cards) 
 //and will make it into an array of Objects with different keys and values.
 function whatSelection () {
+
+    //we will be pushing all of the values as objects into this array 
+var deck = [];
 
     //this variables keeps track of things like position and repetitions 
     var i = 0;
@@ -55,21 +55,7 @@ function whatSelection () {
     }
 
     shuffle(deck);
-
-    deck.forEach(function(card, index){
-
-        let cards = document.createElement("div");
-        cards.classList.add("card");
-        cards.id = index;
-        content.appendChild(cards);
-        var cardContent = `
-            <div class = "${card.value} ${card.typeOfCard}">
-            <h4> ${card.typeOfCard} </h4>
-            </div>
-        `;
-        document.getElementById(cards.id).innerHTML = cardContent;
-    
-    });
+    sessionStorage.setItem('storedDeck', JSON.stringify(deck));
     }
 
 
