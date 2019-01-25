@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Memory Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/ico" href="images/Red.png"/>
 
     <!-- START -- This stuff is needed for the Dropdown Multiselect plugin-->
     <!-- Include Twitter Bootstrap and jQuery: -->
@@ -19,26 +20,36 @@
     <!-- END -- This stuff is needed for the Dropdown Multiselect plugin-->
 
     <script src="script/script.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Press+Start+2P" rel="stylesheet">
 </head>
 <body>
-
-    <div>
-        <form id="myForm" action="/game.html" method="POST"> 
-            <select name="" class="pairsAmount" id="">
-                <option value="4">4</option>
-                <option value="6">6</option>
-                <option value="8">8</option>
-                <option value="10">10</option>
-            </select>
-            <select name="typesOfCards" multiple id="colorChoices">
-                <option value="Blue" selected>Blue</option>
-                <option value="Red" selected>Red</option>
-                <option value="Green">Green</option>
-                <option value="Yellow">Yellow</option>
-            </select>
-            <input type="submit" id="submitChoices" value="Submit"/>
+    <div class="main">
+        <h1>Memory card game</h1>
+        <p>The rules are simple: The objective is to pair each card to another card with the same picture. You can ONLY turn 2 cards at the same time to see their value. Select a higher amount of cards for a bigger challenge. </p>
+        <h4>Good luck! </h4>
+        <form id="myForm">
+            <div class="formItem">
+                <label for="amountOfCards">Amount of cards</label>
+                <select name="" class="pairsAmount btn-default btn-block btn" id="amountOfCards">
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                </select>
+            </div>
+            <div class="formItem">
+                <label for="colorChoices">Choose colors</label>
+                <select name="typesOfCards" class="btn-block" multiple id="colorChoices">
+                    <option value="Blue">Blue</option>
+                    <option value="Red">Red</option>
+                    <option value="Green">Green</option>
+                    <option value="Yellow">Yellow</option>
+                </select>
+            </div>
+            <div class="formItem">
+                <input type="submit" class="btnRetro  margin-top" disabled id="submitChoices"  value="Submit"/>
+            </div>
         </form>
     </div>
-    
 </body>
 </html>

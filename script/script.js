@@ -8,7 +8,21 @@ $( document ).ready(function() {
         e.preventDefault();
         whatSelection();
         location.href = "./game.html";
+        
       });
+
+      var container = document.querySelector('.multiselect-selected-text');
+      var submitButton = document.querySelector(".main");
+    
+      submitButton.addEventListener('mouseover', (e) => {
+        if (container.innerHTML === "None selected") {
+            $('#submitChoices').prop('disabled', true);
+          } else {
+            $('#submitChoices').prop('disabled', false);
+          }
+      });
+
+
 });
 
 //This function will take what the user has selected (cards per type and types of cards) 
@@ -70,5 +84,6 @@ function shuffle(array) {
     }
     return array;
 }
+
 
 

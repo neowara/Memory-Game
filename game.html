@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Memory Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/ico" href="images/Red.png"/>
 
     <!-- START -- This stuff is needed for the Dropdown Multiselect plugin-->
     <!-- Include Twitter Bootstrap and jQuery: -->
@@ -20,10 +21,24 @@
 
     <script src="script/game.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:600|Press+Start+2P" rel="stylesheet">
 </head>
 <body>
+    <div class="navBar">
+    <a href="/index.html" class="nav-links ">Home</a>
+    <a href="/game.html" class="nav-links ">Restart game</a>
+    </div>
 
     <div id="content"></div>
- 
+
+    <img class="matched-animation" src="images/Match.gif">
+    <div class="invisible winScreen">
+    <img class="win-img" src="images/winner.gif">
+    <h1 class="win">You win!</h1>
+    <a href="/index.html" class="first-link btnRetro">Home</a>
+    <a href="/game.html" class="second-link btnRetro">Restart game</a>
+    </div>
+    <audio src="/audio/1UP.mp3" class="matched-audio" autostart="false" width="0" height="0"></audio>
+    <audio src="/audio/Winner.mp3" class="winner-audio" autostart="false" width="0" height="0"></audio>
 </body>
 </html>
