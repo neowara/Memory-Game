@@ -74,6 +74,10 @@ p {
     display:inline-block;
     text-align:left;
 }
+
+.pairsAmount {
+    padding-bottom: 10px
+}
 .btnRetro {
     background: #92cd41;
     display: inline-block;
