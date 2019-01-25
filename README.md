@@ -1,6 +1,8 @@
 ### Memory-Game
 Mini-project for JavaScript 1 course
 
+##You can check the project [here](http://christiantm.se/RetroMemory/index.html)
+
 ### To-do list:
 - [X] Create a mockup
 - [X] Create file structure and folders
