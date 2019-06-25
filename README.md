@@ -16,7 +16,7 @@ Fun memory game project built using only JavaScript, HTML and CSS. The user can 
 - [X] If the cards are NOT the same then they will turn around and show the back of the card (Add animation later for when the card turns around)
 - [X] When the user has matched all cards then show Game Results screen.
 
-### If we have time: 
+### If I have time: 
 - [X] Create a welcome page with the game rules
 - [X] The welcome page will let the user choose Max Amount of pairs and Max Amount of card variety
 - [X] Present the game depending on what settings the user chose
