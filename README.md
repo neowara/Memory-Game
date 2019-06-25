@@ -1,5 +1,5 @@
 ### Memory-Game
-Mini-project for JavaScript 1 course
+Fun memory game project built using only JavaScript, HTML and CSS. The user can decide how many cards they want to pair, the higher the amount the more difficult it gets to find and match cards. 
 
 **You can check the project [here](http://christiantm.se/RetroMemory/index.html)**
 
